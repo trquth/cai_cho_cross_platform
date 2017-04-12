@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 import { Provider, connect } from 'react-redux';
 import store from './bootstrap/store';
-import AppWithNavigationState from "./navigators/AppNavigator";
+import MainLayoutContainer from '../src/mobile/navigation_configuration/NavigationConfiguration';
+import TabBarNavigation from './app/tabBar/views/TabBarNavigation';
+import AppWithNavigationState from './mobile/navigation_configuration/NavigationConfiguration'; 
 
-class App extends Component {
-    constructor(props) {
-        super(props)
-    }
-
+export default class App extends Component {
     render() {
-        return
+        return (<Provider store={store}>
+            <AppWithNavigationState />
+        </Provider>)
     }
-}
-
-const ConnectedApp = connect(state => ({
-}), dispatch => ({
-}))(App)
-
-export default function provider() {
-    return <Provider store={store}>
-        <AppWithNavigationState />
-    </Provider>
 }

@@ -1,10 +1,10 @@
-import { React, Component } from "react";
-import { View, Text } from "react-native";
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 
-export default class ActivityContainer {
+export default class ActivityContainer extends Component {
     render() {
-        <View style={{ flex: 1, backgroundColor: "gray" }}>
-            <Text>abc</Text>
+        return <View style={{ flex: 1, backgroundColor: "gray" }}>
+            <Text>test</Text>
         </View>
     }
 }
