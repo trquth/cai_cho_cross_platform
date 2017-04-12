@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import App from "./src/App";
 
 export default class cai_cho_cross_platform extends Component {
   render() {
