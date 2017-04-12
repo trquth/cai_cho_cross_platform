@@ -1,0 +1,3 @@
+rootProject.name = 'cai_cho_cross_platform'
+
+include ':app'
