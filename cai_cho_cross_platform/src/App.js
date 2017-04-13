@@ -6,8 +6,10 @@ import Navigation from './mobile/navigation_configuration/Navigation.Container';
 
 export default class App extends Component {
     render() {
-        return (<Provider store={store}>
-            <Navigation />
-        </Provider>)
+        return (
+            <Provider store={store}>
+                <Navigation />
+            </Provider>
+        )
     }
 }
