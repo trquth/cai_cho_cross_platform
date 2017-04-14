@@ -21,11 +21,6 @@ export default class MainLayoutContainer extends Component {
             sideMenuLeft: new Animated.Value(-sideMenuWidth),
             overlaySideMenu: new Animated.Value(0)
         };
-
-        this._panResponder = {};
-        if (Device.isPhone) {
-            Orientation.lockToPortrait();
-        }
     }
 
     onOpenSideMenu() {
@@ -67,6 +62,7 @@ export default class MainLayoutContainer extends Component {
                     zIndex: 1,
                     position: 'absolute'
                 }}>
+                    {this.props.children}
                 </View>
                 <Animated.View style={{
                     position: 'absolute',

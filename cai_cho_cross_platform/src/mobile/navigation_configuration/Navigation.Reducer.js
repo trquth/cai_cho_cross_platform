@@ -2,10 +2,10 @@ import { NavigationActions } from 'react-navigation';
 import { NavigationMobile } from './NavigationConfiguration';
 
 const initialState = {
-    index: 0,
+    index: 1,
     routes: [
         { key: 'InitA', routeName: 'Activity' },
-        { key: 'InitB', routeName: 'Activity' },
+        { key: 'InitB', routeName: 'Demo' },
     ],
 }
 
