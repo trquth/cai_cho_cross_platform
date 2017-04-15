@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text, Button, TouchableOpacity } from 'react-native';
-import ProductItem from './../product_item/presenters/ProductItem.View';
+import { AddProductItem } from './../product_item/ProductItem.Container';
 
 const ActivityListProducts = (ProductItem) => {
     return class extends Component {
@@ -9,28 +9,28 @@ const ActivityListProducts = (ProductItem) => {
                 <ScrollView style={{ flexDirection: 'column', flex: 1 }}>
                     <View style={{
                         flexDirection: 'row',
-                        alignItems: 'center',
+                        justifyContent: 'center',
                     }}>
                         <ProductItem />
                         <ProductItem />
                     </View>
                     <View style={{
                         flexDirection: 'row',
-                        alignItems: 'center',
+                        justifyContent: 'center',
                     }}>
                         <ProductItem />
                         <ProductItem />
                     </View>
                     <View style={{
                         flexDirection: 'row',
-                        alignItems: 'center',
+                        justifyContent: 'center',
                     }}>
                         <ProductItem />
                         <ProductItem />
                     </View>
                     <View style={{
                         flexDirection: 'row',
-                        alignItems: 'center',
+                        justifyContent: 'center',
                     }}>
                         <ProductItem />
                         <ProductItem />
@@ -41,6 +41,4 @@ const ActivityListProducts = (ProductItem) => {
     }
 }
 
-
-
-export default ActivityListProductsContainer = ActivityListProducts(ProductItem);
+export default ActivityListProductsContainer = ActivityListProducts(AddProductItem);

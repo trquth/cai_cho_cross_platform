@@ -14,7 +14,7 @@ const routeConfiguration = {
 }
 
 const stackNavigatorConfiguration = {
-    initialRouteName: 'Profile',
+    initialRouteName: 'Activity',
     headerMode: 'screen'
 }
 

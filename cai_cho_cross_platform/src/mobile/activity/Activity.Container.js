@@ -5,7 +5,7 @@ import ActivityListProductsContainer from './ActivityListProducts.Container';
 import SideMenuIcon from './../side_menu/presenters/SideMenuIcon.View';
 import CartIcon from './../card/presenters/CartIcon.View';
 
-const Activity = (MainLayoutContainer, ActivityListProductsContainer, SideMenuIcon, CartIcon) => {
+const Activity = (MainLayout, ActivityListProducts, SideMenu, Card) => {
     return class extends Component {
         constructor() {
             super()
@@ -23,20 +23,20 @@ const Activity = (MainLayoutContainer, ActivityListProductsContainer, SideMenuIc
         static navigationOptions = {
             header: ({ state, goBack, navigate }) => {
                 style = { backgroundColor: '#55acee' };
-                left = <SideMenuIcon />;
+                left = <SideMenu />;
                 title = <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'white' }}>Activity</Text>;
-                right = <CartIcon />;
+                right = <Card />;
                 return { style, left, right, title }
             }
         };
 
         render() {
             return (
-                <MainLayoutContainer
+                <MainLayout
                     ref='mainlayout'
                 >
-                    <ActivityListProductsContainer />
-                </MainLayoutContainer>
+                    <ActivityListProducts />
+                </MainLayout>
             );
         }
     }
