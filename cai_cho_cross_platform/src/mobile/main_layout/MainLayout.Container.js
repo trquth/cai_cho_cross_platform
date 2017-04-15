@@ -11,7 +11,6 @@ export default class MainLayoutContainer extends Component {
         super();
         this.onCloseSideMenu = this.onCloseSideMenu.bind(this);
         this.onOpenSideMenu = this.onOpenSideMenu.bind(this);
-
         this.state = {
             layout: {
                 width: width,
@@ -24,7 +23,6 @@ export default class MainLayoutContainer extends Component {
     }
 
     onOpenSideMenu() {
-        console.log('onOpenSideMenu')
         const { sideMenuLeft, overlaySideMenu } = this.state;
         Animated.parallel([
             Animated.timing(overlaySideMenu, {
@@ -55,13 +53,11 @@ export default class MainLayoutContainer extends Component {
 
     render() {
         return (
-            <View>
-                <View style={{
-                    flex: 1,
-                    flexDirection: 'row',
-                    zIndex: 1,
-                    position: 'absolute'
-                }}>
+            <View style={{
+                flex: 1,
+                backgroundColor: '#f2f2f2',
+            }}>
+                <View style={{ flex: 1, zIndex: 0 }}>
                     {this.props.children}
                 </View>
                 <Animated.View style={{
@@ -69,15 +65,15 @@ export default class MainLayoutContainer extends Component {
                     top: 0,
                     bottom: 0,
                     zIndex: 3,
-                    backgroundColor: 'green',
-                    width: 400,
-                    left: 30,
                     flex: 1,
-                    flexDirection: 'row'
-                }}>
+                    backgroundColor: '#433d47',
+                    width: this.state.sideMenuWidth,
+                    left: this.state.sideMenuLeft,
 
-                    <SideMenu />
+                }}>
                 </Animated.View>
+
+
             </View>
         )
     }
