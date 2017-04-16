@@ -7,14 +7,14 @@ const DeleteProduct = () => {
             flexDirection: 'row',
             flex: 1,
             justifyContent: 'center',
-            alignItems: 'center',
-            marginLeft: 10
+            margin: 10,
+            //marginLeft: 10
         }}>
             <TouchableHighlight style={{
             }}>
                 <View style={{ flexDirection: 'row', flex: 1 }} >
                     <Image source={require('../../../assets/cart/delete.png')} style={{
-                        width: 45, height: 45,
+                        width: 18, height: 18,
                         resizeMode: 'contain'
                     }} />
                 </View>

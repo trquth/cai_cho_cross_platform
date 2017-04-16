@@ -3,6 +3,7 @@ import { Button } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import ActivityContainer from '../activity/Activity.Container';
 import ProfileContainer from '../profile/Profile.Container';
+import OrderContainer from '../order/Order.Container';
 
 const routeConfiguration = {
     Activity: {
@@ -10,11 +11,14 @@ const routeConfiguration = {
     },
     Profile: {
         screen: ProfileContainer
+    },
+    Order: {
+        screen: OrderContainer
     }
 }
 
 const stackNavigatorConfiguration = {
-    initialRouteName: 'Activity',
+    initialRouteName: 'Order',
     headerMode: 'screen'
 }
 

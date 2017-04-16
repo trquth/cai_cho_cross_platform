@@ -6,6 +6,8 @@ const AddProduct = () => {
         <TouchableHighlight style={{
             flex: 1,
             margin: 15,
+            paddingTop: 4,
+            paddingBottom: 4,
             backgroundColor: '#55acee',
             justifyContent: 'center',
             alignItems: 'center',

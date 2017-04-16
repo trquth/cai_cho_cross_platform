@@ -17,7 +17,7 @@ const ProductItemInScreen = (Product) => {
 const AddProductFunction = AddProduct => ProductItem(AddProduct);
 const AddProductItem = ProductItemInScreen(AddProductFunction(AddProduct));
 const DeleteProductFunction = DeleteProduct => ProductItem(DeleteProduct);
-const DeleteProductItem = ProductItemInScreen(DeleteProductFunction(AddProduct));
+const DeleteProductItem = ProductItemInScreen(DeleteProductFunction(DeleteProduct));
 
 export {
     AddProductItem,

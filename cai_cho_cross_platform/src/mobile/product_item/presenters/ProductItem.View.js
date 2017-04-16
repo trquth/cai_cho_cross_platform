@@ -6,7 +6,7 @@ const ProductItem = (ProductItemFunction) => {
     return class extends Component {
         constructor() {
             super()
-            let widthFrame = width / 2;
+            const widthFrame = width / 2;
         }
 
         render() {
@@ -23,8 +23,12 @@ const ProductItem = (ProductItemFunction) => {
                     shadowRadius: 2,
                     shadowOpacity: 0.5,
                 }}>
-                    <View style={{ padding: 10, justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                        <View style={{ flex: 2 }}>
+                    <View style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        flex: 1
+                    }}>
+                        <View style={{ flex: 2, paddingRight: 10, paddingLeft: 10 }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
                                 <Image source={require('../../../assets/activity/product.png')} style={{
                                     width: 150,
@@ -34,20 +38,26 @@ const ProductItem = (ProductItemFunction) => {
                             </View>
                         </View>
                         <View style={{
-                            flexDirection: 'row'
+                            height: 5,
+                            flexDirection: 'row',
                         }}>
-                            <Image source={require('../../../assets/activity/line.png')} style={{ width: this.widthFrame }} />
+                            <Image source={require('../../../assets/activity/line.png')}
+                                style={{
+                                    flex: 1,
+                                    width: null,
+                                    height: null,
+                                    resizeMode: 'contain'
+                                }} />
                         </View>
                         <View style={{
-                            backgroundColor: 'white',
-                            flexDirection: 'row', flex: 1
+                            flexDirection: 'row', flex: 1, padding: 5
                         }}>
                             <View style={{ flex: 3 }}>
                                 <View style={{ flex: 1, justifyContent: 'center' }}>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 13 }}>Product Name</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 12 }}>Product Name</Text>
                                 </View>
                                 <View style={{ flex: 1, justifyContent: 'center' }}>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 19 }}>$99</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 12 }}>$99</Text>
                                 </View>
 
                             </View>
@@ -61,7 +71,6 @@ const ProductItem = (ProductItemFunction) => {
                             </View>
                         </View>
                     </View>
-
                 </View>
             )
         }

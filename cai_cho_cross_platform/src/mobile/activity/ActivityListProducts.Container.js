@@ -6,7 +6,7 @@ const ActivityListProducts = (ProductItem) => {
     return class extends Component {
         render() {
             return (
-                <ScrollView style={{ flexDirection: 'column', flex: 1 }}>
+                <ScrollView style={{ flexDirection: 'column', flex: 5 }}>
                     <View style={{
                         flexDirection: 'row',
                         justifyContent: 'center',
