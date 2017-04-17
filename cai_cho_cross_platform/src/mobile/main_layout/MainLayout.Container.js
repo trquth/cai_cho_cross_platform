@@ -3,8 +3,7 @@ import { View, Animated, Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import SideMenu from './../side_menu/SideMenu.Container';
 const { height, width } = Dimensions.get('window');
-const popUpHeight = height * 1 / 3;
-const sideMenuWidth = width * 4 / 5;
+const sideMenuWidth = width / 1.3;
 
 export default class MainLayoutContainer extends Component {
     constructor() {
@@ -37,7 +36,6 @@ export default class MainLayoutContainer extends Component {
     }
 
     onCloseSideMenu() {
-        console.log('onCloseSideMenu', this.state)
         const { sideMenuLeft, overlaySideMenu } = this.state
         Animated.parallel([
             Animated.timing(overlaySideMenu, {
@@ -57,23 +55,19 @@ export default class MainLayoutContainer extends Component {
                 flex: 1,
                 backgroundColor: '#f2f2f2',
             }}>
-                <View style={{ flex: 1, zIndex: 0 }}>
+                <View style={{ flex: 1, zIndex: 1 }}>
                     {this.props.children}
                 </View>
                 <Animated.View style={{
+                    flex: 1,
                     position: 'absolute',
+                    zIndex: 2,
                     top: 0,
                     bottom: 0,
-                    zIndex: 3,
-                    flex: 1,
-                    backgroundColor: '#433d47',
-                    width: this.state.sideMenuWidth,
-                    left: this.state.sideMenuLeft,
-
+                    left: this.state.sideMenuLeft
                 }}>
+                    <SideMenu />
                 </Animated.View>
-
-
             </View>
         )
     }

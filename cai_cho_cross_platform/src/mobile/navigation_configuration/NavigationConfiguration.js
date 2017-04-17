@@ -22,7 +22,7 @@ const routeConfiguration = {
 }
 
 const stackNavigatorConfiguration = {
-    initialRouteName: 'ProductDetail',
+    initialRouteName: 'Activity',
     headerMode: 'screen'
 }
 
