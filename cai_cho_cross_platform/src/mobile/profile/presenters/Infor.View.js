@@ -16,10 +16,10 @@ const Infor = () => {
                 marginLeft: 20
             }}>
                 <Image source={require('../../../assets/profile/avatar.png')} style={{
-                    width: 80,
-                    height: 80,
+                    width: 100,
+                    height: 100,
                     resizeMode: 'contain',
-                    borderRadius: 40,
+                    borderRadius: 52,
                 }} />
             </View>
             <View style={{
