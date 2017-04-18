@@ -5,35 +5,20 @@ import { AddProductItem } from './../product_item/ProductItem.Container';
 const ActivityListProducts = (ProductItem) => {
     return class extends Component {
         render() {
+            const listProducts = this.props.products.map((item, index) => <ProductItem key={index} product={item} />)
             return (
-                <ScrollView style={{ flexDirection: 'column', flex: 5 }}>
+                <ScrollView style={{
+                    flexDirection: 'column',
+                    flex: 5
+                }}>
+
                     <View style={{
                         flexDirection: 'row',
                         justifyContent: 'center',
+                        flexWrap: 'wrap'
                     }}>
-                        <ProductItem />
-                        <ProductItem />
-                    </View>
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'center',
-                    }}>
-                        <ProductItem />
-                        <ProductItem />
-                    </View>
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'center',
-                    }}>
-                        <ProductItem />
-                        <ProductItem />
-                    </View>
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'center',
-                    }}>
-                        <ProductItem />
-                        <ProductItem />
+
+                        {listProducts}
                     </View>
                 </ScrollView>
             );

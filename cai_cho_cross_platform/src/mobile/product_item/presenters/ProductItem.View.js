@@ -10,6 +10,7 @@ const ProductItem = (ProductItemFunction) => {
         }
 
         render() {
+            const { title, maxSalePrice, imageUrl } = this.props.product
             return (
                 <View style={{
                     backgroundColor: 'white',
@@ -30,7 +31,7 @@ const ProductItem = (ProductItemFunction) => {
                     }}>
                         <View style={{ flex: 2, paddingRight: 10, paddingLeft: 10 }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                                <Image source={require('../../../assets/activity/product.png')} style={{
+                                <Image source={{ uri: imageUrl }} style={{
                                     width: 150,
                                     height: 150,
                                     resizeMode: 'contain'
@@ -41,7 +42,7 @@ const ProductItem = (ProductItemFunction) => {
                             height: 5,
                             flexDirection: 'row',
                         }}>
-                            <Image source={require('../../../assets/activity/line.png')}
+                            <Image source={require('../../../assets/images/line.png')}
                                 style={{
                                     flex: 1,
                                     width: null,
@@ -54,10 +55,10 @@ const ProductItem = (ProductItemFunction) => {
                         }}>
                             <View style={{ flex: 3 }}>
                                 <View style={{ flex: 1, justifyContent: 'center' }}>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 12 }}>Product Name</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 12 }} numberOfLines={1}>{title}</Text>
                                 </View>
                                 <View style={{ flex: 1, justifyContent: 'center' }}>
-                                    <Text style={{ fontWeight: 'bold', fontSize: 12 }}>$99</Text>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 12 }}>${maxSalePrice}</Text>
                                 </View>
 
                             </View>

@@ -13,9 +13,10 @@ const SideMenuIcon = (openSideMenu) => {
             alignItems: 'center',
             marginLeft: 10
         }}>
-            <TouchableHighlight style={{
-            }} onPress={open}>
-                <Image source={require('../../../assets/activity/menu.png')} style={{
+            <TouchableHighlight
+                underlayColor="rgba(85,172,238,2)"
+                onPress={open}>
+                <Image source={require('../../../assets/images/menu.png')} style={{
                     width: 22, height: 22,
                     resizeMode: 'contain'
                 }} />

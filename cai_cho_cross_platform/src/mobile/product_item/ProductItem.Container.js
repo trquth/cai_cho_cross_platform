@@ -8,7 +8,7 @@ const ProductItemInScreen = (Product) => {
     return class extends Component {
         render() {
             return (
-                <Product />
+                <Product product={this.props.product} />
             );
         }
     }
