@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableHighlight } from 'react-native';
 
-const Menu = () => {
+const Menu = (activityScreen) => {
     return (
         <View style={{
             flex: 1,
@@ -50,7 +50,11 @@ const Menu = () => {
                         <Image source={require('../../../assets/profile/activityico.png')} style={{ height: 22, width: 22, resizeMode: 'contain' }} />
                     </View>
                     <View style={{ flex: 4 }}>
-                        <Text style={{ color: 'white', fontSize: 13 }}>Activity</Text>
+                        <TouchableHighlight
+                            onPress={activityScreen.backToActivity.backToActivity}
+                            underlayColor="rgba(68, 155, 221, 1.5)">
+                            <Text style={{ color: 'white', fontSize: 13 }}>Activity</Text>
+                        </TouchableHighlight>
                     </View>
                 </View>
                 <View style={{

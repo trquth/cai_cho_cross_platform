@@ -9,21 +9,21 @@ const ProductDetailInScreen = (MainLayout, ProductDetail, SideMenu, Card) => {
     return class extends Component {
         constructor() {
             super()
-            this.test = this.test.bind(this);
+            this.onOpenSideMenu = this.onOpenSideMenu.bind(this);
         }
 
         componentDidMount() {
-            this.props.navigation.setParams({ handleSave: this.test });
+            this.props.navigation.setParams({ onOpenSideMenu: this.onOpenSideMenu });
         }
 
-        test() {
-            this.refs.mainlayout.onCloseSideMenu();
+        onOpenSideMenu() {
+            this.refs.mainlayout.onOpenSideMenu();
         }
 
         static navigationOptions = {
             header: ({ state, goBack, navigate }) => {
                 style = { backgroundColor: '#55acee' };
-                left = <SideMenu />;
+                left = <SideMenu onOpenSideMenu={() => state.params.onOpenSideMenu()} />;
                 title = <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'white' }}>Product Detail</Text>;
                 right = <Card />;
                 return { style, left, right, title }
@@ -35,7 +35,7 @@ const ProductDetailInScreen = (MainLayout, ProductDetail, SideMenu, Card) => {
                 <MainLayout
                     ref='mainlayout'
                 >
-                    <ProductDetail />
+                    <ProductDetail product={this.props.navigation.state.params}/>
                 </MainLayout>
             );
         }

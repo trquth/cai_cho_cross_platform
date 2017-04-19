@@ -4,7 +4,7 @@ import Infor from './Infor.View';
 import Menu from './Menu.View';
 const { height, width } = Dimensions.get('window');
 
-const Profile = () => {
+const Profile = (backToActivity) => {
     return (
         <View style={{
             flexDirection: 'column',
@@ -15,7 +15,7 @@ const Profile = () => {
                 <Infor />
             </View>
             <View style={{ flex: 3 }}>
-                <Menu />
+                <Menu backToActivity={backToActivity} />
             </View>
         </View>
     )

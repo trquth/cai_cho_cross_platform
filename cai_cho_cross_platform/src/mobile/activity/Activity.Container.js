@@ -39,7 +39,10 @@ const Activity = (MainLayout, ActivityListProducts, SideMenu, Card) => {
                 <MainLayout
                     ref='mainlayout'
                 >
-                    <ActivityListProducts products={this.props.list_products} />
+                    <ActivityListProducts
+                        products={this.props.list_products}
+                        navigation={this.props.navigation}
+                    />
                 </MainLayout>
             );
         }

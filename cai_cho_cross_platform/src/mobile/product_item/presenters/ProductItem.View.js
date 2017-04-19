@@ -31,13 +31,19 @@ const ProductItem = (ProductItemFunction) => {
                     }}>
                         <View style={{ flex: 2, paddingRight: 10, paddingLeft: 10 }}>
                             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-                                <Image source={{ uri: imageUrl }} style={{
-                                    width: 150,
-                                    height: 150,
-                                    resizeMode: 'contain'
-                                }} />
+                                <TouchableHighlight
+                                    onPress={this.props.pressDetail}
+                                    underlayColor={'#fff'}
+                                >
+                                    <Image source={{ uri: imageUrl }} style={{
+                                        width: 150,
+                                        height: 150,
+                                        resizeMode: 'contain'
+                                    }} />
+                                </TouchableHighlight>
                             </View>
                         </View>
+
                         <View style={{
                             height: 5,
                             flexDirection: 'row',
@@ -72,7 +78,7 @@ const ProductItem = (ProductItemFunction) => {
                             </View>
                         </View>
                     </View>
-                </View>
+                </View >
             )
         }
     }

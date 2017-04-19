@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, TouchableHighlight, Dimensions, Image } from 'react-native';
 const { height, width } = Dimensions.get('window');
 
-const ProductView = () => {
+const ProductView = (product) => {
     const widthFrame = width;
+    const { imageUrl, title, maxSalePrice } = product.product;
     return (
         <View style={{
             flex: 1,
@@ -21,11 +22,13 @@ const ProductView = () => {
                 justifyContent: 'center', alignItems: 'center'
             }}>
                 <View style={{
-                    alignItems: 'flex-start',
-                    flex: 1
+                    alignItems: 'center',
+                    flex: 1,
+                    justifyContent: 'center'
                 }}>
-                    <Image source={require('../../../assets/activity/product3.png')} style={{
-                        width: width,
+                    <Image source={{ uri: imageUrl }} style={{
+                        width: widthFrame - 20,
+                        height: widthFrame / 2,
                         resizeMode: 'contain'
                     }} />
                 </View>
@@ -43,11 +46,11 @@ const ProductView = () => {
                     }} />
             </View>
             <View style={{ flex: 1, flexDirection: 'row', paddingLeft: 10, paddingRight: 10 }}>
-                <View style={{ flex: 1, justifyContent: 'center' }}>
-                    <Text style={{ fontWeight: 'bold' }}>Name of the product</Text>
+                <View style={{ flex: 3, justifyContent: 'center' }}>
+                    <Text style={{ fontWeight: 'bold' }}>{title}</Text>
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                    <Text style={{ fontWeight: 'bold' }}>$99</Text>
+                    <Text style={{ fontWeight: 'bold' }}>${maxSalePrice}</Text>
                 </View>
             </View>
             <View style={{

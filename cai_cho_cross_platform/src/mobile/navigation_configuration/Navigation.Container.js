@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { addNavigationHelpers } from 'react-navigation';
 import { NavigationMobile } from './NavigationConfiguration';
 import { connect } from 'react-redux';
-import Icon from 'react-native-vector-icons/FontAwesome'
-
 
 class Navigation extends Component {
     render() {
