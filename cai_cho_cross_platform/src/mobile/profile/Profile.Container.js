@@ -8,14 +8,22 @@ const SideMenu = (Profile) => {
         constructor() {
             super()
             this.backToActivity = this.backToActivity.bind(this);
+            this.backToExplore = this.backToExplore.bind(this);
         }
+
         backToActivity() {
             this.props.backToActivity()
         }
 
+        backToExplore() {
+            this.props.backToExplore()
+        }
+
         render() {
             return (
-                <Profile backToActivity={this.backToActivity} />
+                <Profile
+                    backToActivity={this.backToActivity}
+                    backToExplore={this.backToExplore} />
             );
         }
     }

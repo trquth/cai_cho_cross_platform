@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableHighlight } from 'react-native';
 
-const Menu = (activityScreen) => {
+const Menu = (navigation) => {
     return (
         <View style={{
             flex: 1,
@@ -31,7 +31,11 @@ const Menu = (activityScreen) => {
                         <Image source={require('../../../assets/profile/exploreico.png')} style={{ height: 22, width: 22, resizeMode: 'contain' }} />
                     </View>
                     <View style={{ flex: 4 }}>
-                        <Text style={{ color: 'white', fontSize: 13 }}>Explore</Text>
+                        <TouchableHighlight
+                            onPress={navigation.backToExplore}
+                            underlayColor="rgba(68, 155, 221, 1.5)">
+                            <Text style={{ color: 'white', fontSize: 13 }}>Explore</Text>
+                        </TouchableHighlight>
                     </View>
 
                 </View>
@@ -51,7 +55,7 @@ const Menu = (activityScreen) => {
                     </View>
                     <View style={{ flex: 4 }}>
                         <TouchableHighlight
-                            onPress={activityScreen.backToActivity.backToActivity}
+                            onPress={navigation.backToActivity}
                             underlayColor="rgba(68, 155, 221, 1.5)">
                             <Text style={{ color: 'white', fontSize: 13 }}>Activity</Text>
                         </TouchableHighlight>

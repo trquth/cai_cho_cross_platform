@@ -5,6 +5,7 @@ import ActivityContainer from '../activity/Activity.Container';
 import ProfileContainer from '../profile/Profile.Container';
 import OrderContainer from '../order/Order.Container';
 import ProductDetailContainer from '../product_detail/ProductDetail.Container';
+import ExploreContainer from '../explore/Explore.Container';
 
 const routeConfiguration = {
     Activity: {
@@ -18,6 +19,9 @@ const routeConfiguration = {
     },
     ProductDetail: {
         screen: ProductDetailContainer
+    },
+    Explore: {
+        screen: ExploreContainer
     }
 }
 
