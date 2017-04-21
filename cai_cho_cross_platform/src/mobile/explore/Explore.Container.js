@@ -5,7 +5,7 @@ import { View, Text, Button, TouchableOpacity } from 'react-native';
 import MainLayoutContainer from './../main_layout/MainLayout.Container';
 import ExploreListProductsContainer from './ExploreListProducts.Container';
 import SideMenuIcon from './../side_menu/presenters/SideMenuIcon.View';
-import CartIcon from './../card/presenters/CartIcon.View';
+import CartIcon from './../cart/presenters/CartIcon.View';
 import { initializeApp } from './Explore.Action';
 
 const ExploreInScreen = (MainLayout, ExploreListProducts, SideMenu, Card) => {

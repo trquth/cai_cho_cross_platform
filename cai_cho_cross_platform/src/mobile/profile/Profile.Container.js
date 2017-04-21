@@ -9,6 +9,7 @@ const SideMenu = (Profile) => {
             super()
             this.backToActivity = this.backToActivity.bind(this);
             this.backToExplore = this.backToExplore.bind(this);
+            this.backToSetting = this.backToSetting.bind(this);
         }
 
         backToActivity() {
@@ -19,11 +20,16 @@ const SideMenu = (Profile) => {
             this.props.backToExplore()
         }
 
+        backToSetting() {
+            this.props.backToSetting()
+        }
+
         render() {
             return (
                 <Profile
                     backToActivity={this.backToActivity}
-                    backToExplore={this.backToExplore} />
+                    backToExplore={this.backToExplore}
+                    backToSetting={this.backToSetting} />
             );
         }
     }

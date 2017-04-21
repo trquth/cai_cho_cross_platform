@@ -13,6 +13,7 @@ const SideMenuInScreen = (Menu) => {
             super()
             this.backToActivity = this.backToActivity.bind(this);
             this.backToExplore = this.backToExplore.bind(this);
+            this.backToSetting = this.backToSetting.bind(this);
         }
         backToActivity() {
             this.props.backToScreen(constant.ACTIVITY_SCREEN);
@@ -21,11 +22,17 @@ const SideMenuInScreen = (Menu) => {
         backToExplore() {
             this.props.backToScreen(constant.EXPLORE_SCREEN);
         }
+
+        backToSetting() {
+            this.props.backToScreen(constant.SETTING_SCREEN);
+        }
+
         render() {
             return (
                 <Menu
                     backToActivity={this.backToActivity}
                     backToExplore={this.backToExplore}
+                    backToSetting={this.backToSetting}
                 />
             )
         }

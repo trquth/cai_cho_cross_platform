@@ -17,7 +17,8 @@ const Profile = (navigation) => {
             <View style={{ flex: 3 }}>
                 <Menu
                     backToActivity={navigation.backToActivity}
-                    backToExplore={navigation.backToExplore} />
+                    backToExplore={navigation.backToExplore}
+                    backToSetting={navigation.backToSetting} />
             </View>
         </View>
     )

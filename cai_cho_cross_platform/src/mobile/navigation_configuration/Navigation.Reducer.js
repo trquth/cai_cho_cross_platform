@@ -15,6 +15,8 @@ export default function navigationReducer(state = initialState, action) {
             return NavigationMobile.router.getStateForAction(NavigationActions.navigate({ routeName: 'Activity' }), state);
         case constant.EXPLORE_SCREEN:
             return NavigationMobile.router.getStateForAction(NavigationActions.navigate({ routeName: 'Explore' }), state);
+        case constant.SETTING_SCREEN:
+            return NavigationMobile.router.getStateForAction(NavigationActions.navigate({ routeName: 'Setting' }), state);
         default:
             return NavigationMobile.router.getStateForAction(action, state);
     }

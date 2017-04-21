@@ -94,7 +94,11 @@ const Menu = (navigation) => {
                         <Image source={require('../../../assets/profile/settingico.png')} style={{ height: 22, width: 22, resizeMode: 'contain' }} />
                     </View>
                     <View style={{ flex: 4 }}>
-                        <Text style={{ color: 'white', fontSize: 13 }}>Settings</Text>
+                        <TouchableHighlight
+                            onPress={navigation.backToSetting}
+                            underlayColor="rgba(68, 155, 221, 1.5)">
+                            <Text style={{ color: 'white', fontSize: 13 }}>Settings</Text>
+                        </TouchableHighlight>
                     </View>
                 </View>
                 <View style={{

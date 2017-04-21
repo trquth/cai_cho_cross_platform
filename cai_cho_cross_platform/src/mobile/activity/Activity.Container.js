@@ -5,7 +5,7 @@ import { View, Text, Button, TouchableOpacity } from 'react-native';
 import MainLayoutContainer from './../main_layout/MainLayout.Container';
 import ActivityListProductsContainer from './ActivityListProducts.Container';
 import SideMenuIcon from './../side_menu/presenters/SideMenuIcon.View';
-import CartIcon from './../card/presenters/CartIcon.View';
+import CartIcon from './../cart/presenters/CartIcon.View';
 import { initializeApp } from './Activity.Action';
 
 const Activity = (MainLayout, ActivityListProducts, SideMenu, Card) => {
