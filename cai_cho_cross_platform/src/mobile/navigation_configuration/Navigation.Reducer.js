@@ -5,7 +5,7 @@ import * as constant from './../../assets/constant/constant';
 const initialState = {
     index: 0,
     routes: [
-        { key: 'Activity', routeName: 'Activity' },
+        { key: 'ProductServer', routeName: 'ProductServer' },
     ],
 }
 
