@@ -71,7 +71,6 @@ export default class DownloadFileManager extends InjectedManager {
             result: ""
         }
         this.getDbPath((dbPath) => {
-            console.log('tesst tesst', dbPath)
             RNFetchBlob.config({
                 fileCache: true,
                 path: dbPath + fileName
@@ -79,14 +78,9 @@ export default class DownloadFileManager extends InjectedManager {
                 'Content-Type': 'application/json'
             },
                 JSON.stringify({
-                    //Name: this.settingsReducer.deviceIdent,
-                    Code: `OA34X7-p6jkv3y0qk2W5ujRRG` // 54.179.168.225
-                    // Code: 'M1XMu0QtRjGX3R+EqCBfOw==' Code for local POSServer
-                })).progress((received, total) => {
-                    console.log(`received: ${received} -- total: ${total} -- progress: ${received / total}`);
-                }).then((res) => {
-                    // res.flush();
-                    console.log('xdfdsafs', res.path());
+                    Code: `OA34X7-p6jkv3y0qk2W5ujRRG`
+                })).then((res) => {
+                    console.log('path', res.path());
                     returnMess.status = constants.RETURN_STATUS_SUCCESS
                     complete(returnMess);
                 }).catch((err) => {

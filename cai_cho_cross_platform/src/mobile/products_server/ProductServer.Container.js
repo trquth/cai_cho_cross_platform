@@ -6,37 +6,28 @@ import MainLayoutContainer from './../main_layout/MainLayout.Container';
 import ProductServerListProductsContainer from './ProductServerListProducts.Container';
 import SideMenuIcon from './../side_menu/presenters/SideMenuIcon.View';
 import CartIcon from './../cart/presenters/CartIcon.View';
-import { initializeApp } from './ProductServer.Action';
+import { initializeApp, loadAllStocktakeEntry } from './ProductServer.Action';
 
 const ProductsServerInScreen = (MainLayout, ProductServerListProducts, SideMenu, Card) => {
     return class extends Component {
         constructor() {
             super()
             this.onOpenSideMenu = this.onOpenSideMenu.bind(this);
+            this.pageSize = 500;
+            this.pageIndex = 1;
         }
 
         componentDidMount() {
             this.props.navigation.setParams({ onOpenSideMenu: this.onOpenSideMenu });
-            this.props.initializeApp();
+            this.props.initializeApp();           
         }
 
         onOpenSideMenu() {
             this.refs.mainlayout.onOpenSideMenu();
         }
 
-        // static navigationOptions = {
-        //     header: ({ navigate }) => {
-        //         style = { backgroundColor: '#55acee' };
-        //         left = <SideMenu onOpenSideMenu={() => state.params.onOpenSideMenu()} />;
-        //         title = <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'white' }}>Demo</Text>;
-        //         right = <Card />;
-        //         return { style, left, right, title }
-        //     }
-        // };
-
         static navigationOptions = ({ navigation, screenProps }) => ({
-            title: 'abc',
-            headerRight: <Button title='abc' onPress={() => { }} />,
+            title: 'Demo',
         });
 
 

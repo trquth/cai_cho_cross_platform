@@ -1,7 +1,7 @@
 /**
  * Created by sts on 9/15/16.
  */
-import {NativeModules} from 'react-native';
+import { NativeModules } from 'react-native';
 import SQLite from 'react-native-sqlite-storage';
 import Utils from './Utils';
 import InjectedManager from './InjectedManager';
@@ -56,7 +56,7 @@ export default class DBManager extends InjectedManager {
     openDB(isRealDB, complete) {
         var dbName = isRealDB ? 'database.sqlite' : 'demo.sqlite';
 
-        this.db = SQLite.openDatabase({name: dbName}, () => {
+        this.db = SQLite.openDatabase({ name: dbName }, () => {
             this.createMissingTables();
             if (complete)
                 complete();
@@ -69,11 +69,11 @@ export default class DBManager extends InjectedManager {
     }
 
     openDatabase(complete) {
-        if (this.settingsReducer.enableConnect) {
-            DownloadFileManager.instance.checkFileExist("database.sqlite", (result)=> {
+        if (true) {
+            DownloadFileManager.instance.checkFileExist("database.sqlite", (result) => {
                 console.log("openDatabasecheckFile: ", result)
                 if (result) {
-                    this.openDB(this.settingsReducer.enableConnect, complete);
+                    this.openDB(true, complete);
                 } else {
                     complete();
                 }
@@ -116,7 +116,7 @@ export default class DBManager extends InjectedManager {
 
     executeUpdateSql(query, complete) {
         if (!this.db) {
-            this.openDatabase(()=> {
+            this.openDatabase(() => {
                 console.log("after openDatabase")
                 if (this.db) {
                     let error = null;
@@ -124,10 +124,10 @@ export default class DBManager extends InjectedManager {
                         tx.executeSql(query, [], (tx, results) => {
                             complete(results);
                         }, err => {
-                            error = {executeSql: err};
+                            error = { executeSql: err };
                         });
                     }, err => {
-                        error = {...error, transaction: err};
+                        error = { ...error, transaction: err };
                         console.log(error);
                         complete(null, error);
                     });
@@ -142,10 +142,10 @@ export default class DBManager extends InjectedManager {
                 tx.executeSql(query, [], (tx, results) => {
                     complete(results);
                 }, err => {
-                    error = {executeSql: err};
+                    error = { executeSql: err };
                 });
             }, err => {
-                error = {...error, transaction: err};
+                error = { ...error, transaction: err };
                 console.log(error);
                 complete(null, error);
             });
@@ -156,7 +156,7 @@ export default class DBManager extends InjectedManager {
     notifyPropertyChanged(pathName, oldValue, newValue) {
         console.log('DBManager notifyPropertyChanged: ', pathName, newValue);
         if (newValue) {
-            DownloadFileManager.instance.checkFileExist("database.sqlite", (result)=> {
+            DownloadFileManager.instance.checkFileExist("database.sqlite", (result) => {
                 console.log("openDatabase: ", result)
                 if (result) {
                     this.closeDatabase(() => this.openDB(newValue));

@@ -4,6 +4,7 @@ import FetchHelper from '../../ultilities/FetchHelper';
 import data from '../../assets/seed_data/data.json';
 import * as constant from '../../assets/constant/constant';
 import DownloadFileManager from '../../ultilities/DownloadFileManager';
+import StockDao from '../dao/StockDao';
 
 
 export function initializeApp() {
@@ -27,7 +28,7 @@ function downloadFile() {
         if (result.status === constant.RETURN_STATUS_SUCCESS) {
             console.log('RUN HERE A')
             resolve(result);
-            
+
             DBManager.instance.closeDatabase(err => {
                 if (!err) {
                     console.log('RUN HERE B')
@@ -40,23 +41,18 @@ function downloadFile() {
     });
 }
 
-// export function downloadFile() {
-//     return (dispatch, getState) => new Promise(function (resolve, reject) {
-//         //DownloadFileManager.instance.checkFileExist('database.sqlite')
-//         DownloadFileManager.instance.deleteFile('database.sqlite')
-//         DownloadFileManager.instance.downloadFile('database.sqlite', (result) => {
-//             console.log('download db complete: ', result);
-//             if (result.status == constant.RETURN_STATUS_SUCCESS) {
-//                 resolve(result);
-//                 DBManager.instance.closeDatabase(err => {
-//                     if (!err) {
-//                         DBManager.instance.openDatabase();
-//                     }
-//                 });
-//             } else {
-//                 resolve(result)
-//                 //Alert.alert("Download Error", `Failed (-1003)\n ${result.result}`)
-//             }
-//         });
-//     });
-// }
+export function loadAllStocktakeEntry(pageSize, pageIdx, complete) {
+    return (dispatch) => {
+        StockDao.getAllStockItems(pageSize, pageIdx, items => {
+            const action = (data) => {
+                return {
+                    type: "STOCK_TAKE_LOAD_ALL_STOCK_ITEMS",
+                    items: data,
+                    pageIdx: pageIdx
+                }
+            };
+            dispatch(action(items));
+            complete();
+        });
+    }
+}

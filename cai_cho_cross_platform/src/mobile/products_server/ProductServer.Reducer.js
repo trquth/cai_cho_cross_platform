@@ -24,6 +24,14 @@ export default function (state = initialState, action) {
                     products: data,
                 };
             }
+        case "STOCK_TAKE_LOAD_ALL_STOCK_ITEMS":
+            {
+                let data = action.items;
+                return {
+                    ...state,
+                    products: action.pageIdx === 0 ? data : [...state.products, ...data],
+                };
+            }
     }
     return state;
 }
