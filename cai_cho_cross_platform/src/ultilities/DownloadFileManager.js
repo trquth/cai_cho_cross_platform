@@ -6,23 +6,16 @@ import RNFetchBlob from 'react-native-fetch-blob';
 import Utils from './Utils';
 import InjectedManager from './InjectedManager';
 import * as constants from '../assets/constant/constant';
-var RNFS = require('react-native-fs');
 var IPSNativeModules = NativeModules.IPSNativeModules;
 
 let instance = null;
 
-export default class DownloadFileManager extends InjectedManager {
-
+export default class DownloadFileManager {
     constructor() {
-        super();
         if (!instance) {
             instance = this;
-            this.registerPropertyChanged('settingsReducer.address');
         }
         return instance;
-    }
-
-    notifyPropertyChanged(pathName, oldValue, newValue) {
     }
 
     static get instance() {
@@ -38,30 +31,22 @@ export default class DownloadFileManager extends InjectedManager {
 
     checkFileExist(fileName, callback) {
         var flag = false
-
         this.getDbPath((dbPath) => {
-            RNFS.exists(dbPath + fileName).then((result) => {
-                //File checkFileExist')
-                flag = result
+            RNFetchBlob.fs.exists(dbPath + fileName).then((result) => {
+                flag = result;
+                callback(flag);
+            }).catch(() => {
                 callback(flag)
-            }
-            ).catch((err) => {
-                console.log(err)
-                callback(flag)
-            }
-                )
-
+            });
         })
 
     }
 
     deleteFile(fileName) {
-        console.log("deleteFile")
         this.getDbPath((dbPath) => {
-            RNFS.unlink(dbPath + fileName).then(() =>
-                console.log('File deleted')
-            ).catch((err) =>
-                console.log(err))
+            RNFetchBlob.fs.unlink(dbPath + fileName)
+                .then(() => { })
+                .catch((err) => { })
         });
     }
 
@@ -87,8 +72,7 @@ export default class DownloadFileManager extends InjectedManager {
                     returnMess.status = constants.RETURN_STATUS_ERROR;
                     returnMess.result = err
                     complete(returnMess)
-                }
-                )
+                })
                 ;
         });
     }
