@@ -4,7 +4,6 @@
 import { Platform, NativeModules, AsyncStorage } from 'react-native';
 import RNFetchBlob from 'react-native-fetch-blob';
 import Utils from './Utils';
-import InjectedManager from './InjectedManager';
 import * as constants from '../assets/constant/constant';
 var IPSNativeModules = NativeModules.IPSNativeModules;
 

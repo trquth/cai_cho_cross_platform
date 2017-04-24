@@ -4,20 +4,16 @@
 import { NativeModules } from 'react-native';
 import SQLite from 'react-native-sqlite-storage';
 import Utils from './Utils';
-import InjectedManager from './InjectedManager';
 import DownloadFileManager from './DownloadFileManager';
-
 var IPSNativeModules = NativeModules.IPSNativeModules;
 
 let instance = null;
 
-export default class DBManager extends InjectedManager {
+export default class DBManager {
 
     constructor() {
-        super();
         if (!instance) {
             instance = this;
-            this.registerPropertyChanged('settingsReducer.enableConnect');
         }
         return instance;
     }
