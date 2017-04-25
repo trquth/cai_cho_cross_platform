@@ -104,7 +104,6 @@ export default class DBManager {
             else {
                 let rows = results.rows.raw();
                 console.log('result', results);
-                // console.log(`query: ${query} result: `, rows);
                 complete(rows);
             }
         });
@@ -146,23 +145,5 @@ export default class DBManager {
                 complete(null, error);
             });
         }
-    }
-
-
-    notifyPropertyChanged(pathName, oldValue, newValue) {
-        console.log('DBManager notifyPropertyChanged: ', pathName, newValue);
-        if (newValue) {
-            DownloadFileManager.instance.checkFileExist("database.sqlite", (result) => {
-                console.log("openDatabase: ", result)
-                if (result) {
-                    this.closeDatabase(() => this.openDB(newValue));
-                } else {
-                    this.closeDatabase(() => this.openDatabase());
-                }
-            })
-        } else {
-            this.closeDatabase(() => this.openDB(newValue));
-        }
-
     }
 }
