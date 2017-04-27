@@ -23,7 +23,7 @@ const ProductServerItem = (product) => {
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold', color: "red" }}>{product.index}</Text>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', color: "red" }}>{'' + product.index}</Text>
             </View>
         </View >
     )

@@ -33,7 +33,7 @@ const ProductServerFlatList = (Productitem) => {
     return class extends Component {
         constructor(props) {
             super(props)
-            this.pageSize = 20;
+            this.pageSize = 1000;
             this.pageIndex = 0;
             this.handleLoadMore = this.handleLoadMore.bind(this);
         }
