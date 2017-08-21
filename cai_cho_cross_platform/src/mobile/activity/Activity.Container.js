@@ -20,14 +20,11 @@ const Activity = (MainLayoutContainer, ActivityListProductsContainer, SideMenuIc
             this.refs.mainlayout.onCloseSideMenu();
         }
 
-        static navigationOptions = {
-            header: ({ state, goBack, navigate }) => {
-                style = { backgroundColor: '#55acee' };
-                left = <SideMenuIcon />;
-                title = <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'white' }}>Activity</Text>;
-                right = <CartIcon />;
-                return { style, left, right, title }
-            }
+        static navigationOptions = ({ navigation, screenProps }) => {
+            title = <Text style={{ fontWeight: 'bold', fontSize: 20, color: 'white' }}>Activity</Text>
+            headerRight = <CartIcon /> ,
+                headerLeft = <SideMenuIcon /> ,
+                headerStyle = { backgroundColor: '#55acee' }
         };
 
         render() {

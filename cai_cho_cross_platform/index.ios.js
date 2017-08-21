@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import App from './src/App';
 //import App from './src/3rdreactnavigation/App';
+import App2 from './src/srcdemo/app/app';
 
 export default class cai_cho_cross_platform extends Component {
   store = createStore(AppReducer);
@@ -25,4 +26,4 @@ export default class cai_cho_cross_platform extends Component {
   }
 }
 
-AppRegistry.registerComponent('cai_cho_cross_platform', () => App);
+AppRegistry.registerComponent('cai_cho_cross_platform', () => App2);
