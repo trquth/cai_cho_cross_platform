@@ -14,6 +14,7 @@ import {
 import App from './src/App';
 //import App from './src/3rdreactnavigation/App';
 import App2 from './src/srcdemo/app/app';
+import App3 from './src/practicenavigation/App';
 
 export default class cai_cho_cross_platform extends Component {
   store = createStore(AppReducer);
@@ -26,4 +27,4 @@ export default class cai_cho_cross_platform extends Component {
   }
 }
 
-AppRegistry.registerComponent('cai_cho_cross_platform', () => App2);
+AppRegistry.registerComponent('cai_cho_cross_platform', () => App3);
