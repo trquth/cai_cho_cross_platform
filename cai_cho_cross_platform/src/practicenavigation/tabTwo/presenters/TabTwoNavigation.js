@@ -13,7 +13,7 @@ import { connect } from 'react-redux'
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
 //
-const multipleState = false
+const multipleState = true
 
 const mapStateToProps = (state) => {
     return {

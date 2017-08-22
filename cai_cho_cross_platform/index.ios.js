@@ -29,4 +29,4 @@ export default class cai_cho_cross_platform extends Component {
   }
 }
 
-AppRegistry.registerComponent('cai_cho_cross_platform', () => App5);
+AppRegistry.registerComponent('cai_cho_cross_platform', () => App3);

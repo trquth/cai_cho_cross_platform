@@ -7,16 +7,21 @@ export function stack(state, action) {
   switch (action.type) {
     case BACK: {
       const navigationAction = NavigationActions.back({});
-      return Stack.router.getStateForAction(navigationAction, state);
+      let x = Stack.router.getStateForAction(navigationAction, state);
+      return x
     }
     case GET_TEAM: {
       const navigationAction = NavigationActions.navigate({
         routeName: 'TeamScreen',
         params: { ...action.payload },
       });
+      console.log('XXXXX-->', navigationAction)
 
-      return Stack.router.getStateForAction(navigationAction, state);
+      let x = Stack.router.getStateForAction(navigationAction, state);
+      console.log('xầgeg sà--->', x)
+      return x
     }
+    console.log('yyyyyyyy->')
     default: return Stack.router.getStateForAction(action, state);
   }
 }

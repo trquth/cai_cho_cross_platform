@@ -14,7 +14,7 @@ const routeConfiguration = {
 // going to disable the header for now
 const stackNavigatorConfiguration = {
     headerMode: 'none',
-    initialRouteName: 'ScreenOneInTabOne'
+    //initialRouteName: 'ScreenOneInTabOne'
 }
 
 export const NavigatorTabOne = StackNavigator(routeConfiguration, stackNavigatorConfiguration)

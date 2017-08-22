@@ -6,17 +6,7 @@ import { NavigationActions } from 'react-navigation'
 
 export default class ScreenTwoInTabTwo extends Component {
     test() {
-        const resetAction = NavigationActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.back({ key: "ScreenOneInTabTow" }),
-            ]
-        })
-        //this.props.navigation.goBack()
-        //this.props.navigation.navigate("TabOneNavigation")
-        //this.props.navigation.dispatch({ type: 'JUMP_TO_TAB' })
-        this.props.navigation.dispatch(resetAction)
-        //this.props.navigation.navigate("TabOneNavigation")
+        this.props.navigation.dispatch({ type: 'JUMP_TO_ROOT' })
     }
     render() {
         return (
