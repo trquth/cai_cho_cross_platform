@@ -1,8 +1,22 @@
 'use strict'
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { NavigationActions } from 'react-navigation'
 
 export default class ScreenOneInTabTwo extends Component {
+
+    goBackTabOne() {
+        let resetAction = NavigationActions.reset({
+            index: 0,
+            key: null,
+            actions: [
+                NavigationActions.navigate({ routeName: 'ScreenOneInTabOne' })
+            ]
+        })
+
+        this.props.navigation.dispatch(resetAction)
+    }
+
     render() {
         return (
             <View style={{
@@ -26,7 +40,10 @@ export default class ScreenOneInTabTwo extends Component {
                 <TouchableOpacity
                     onPress={
                         () => {
-                            this.props.navigation.dispatch({ type: 'JUMP_TO_TAB' })
+                            //this.props.navigation.dispatch({ type: 'JUMP_TO_TAB' })
+                            console.log('RUN HERE')
+                            this.goBackTabOne()
+                            //this.props.navigation.navigate("TabOneNavigation")
                         }
                     }
                     style={{

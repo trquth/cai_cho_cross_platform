@@ -12,7 +12,8 @@ import { connect } from 'react-redux'
 
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
-
+//
+const multipleState = false
 
 const mapStateToProps = (state) => {
     return {
@@ -28,16 +29,21 @@ class TabTwoNavigation extends Component {
 
     render() {
         const { navigationState, dispatch } = this.props
-        return (
-            <NavigatorTabTwo
-                navigation={
-                    addNavigationHelpers({
-                        dispatch: dispatch,
-                        state: navigationState
-                    })
-                }
-            />
-        )
+        if (multipleState) {
+            return (
+                <NavigatorTabTwo
+                    navigation={
+                        addNavigationHelpers({
+                            dispatch: dispatch,
+                            state: navigationState
+                        })
+                    }
+                />
+            )
+        } else {
+            return <NavigatorTabTwo />
+        }
+
     }
 }
 export default connect(mapStateToProps)(TabTwoNavigation)

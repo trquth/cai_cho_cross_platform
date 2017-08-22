@@ -6,13 +6,12 @@ import React, { Component } from 'react'
 // Navigation
 import { addNavigationHelpers } from 'react-navigation';
 import { NavigatorTabOne } from '../NavigationConfiguration';
-
 // Redux
 import { connect } from 'react-redux'
-
 // Icon
 import Icon from 'react-native-vector-icons/FontAwesome'
 
+const multipleState = false;
 
 const mapStateToProps = (state) => {
     return {
@@ -28,8 +27,8 @@ class TabOneNavigation extends Component {
 
     render() {
         const { navigationState, dispatch } = this.props
-        return (
-            <NavigatorTabOne
+        if (multipleState) {
+            return <NavigatorTabOne
                 navigation={
                     addNavigationHelpers({
                         dispatch: dispatch,
@@ -37,7 +36,10 @@ class TabOneNavigation extends Component {
                     })
                 }
             />
-        )
+        } else {
+            return <NavigatorTabOne
+            />
+        }
     }
 }
 export default connect(mapStateToProps)(TabOneNavigation)
